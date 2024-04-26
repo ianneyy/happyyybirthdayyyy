@@ -1,0 +1,90 @@
+@import url('https://fonts.cdnfonts.com/css/brittany-signature');
+
+body{
+    background-image: url('wavey.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    background-color: #ac274f;
+    min-height: 100vh;
+
+}
+h2{
+    font-size: 3vw;
+    color: #fff;
+    font-family: "Brittany Signature", sans-serif;
+    word-spacing: 1vw;
+}
+.container img{
+    height: 150px;
+    width: 120px;
+}
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    
+}
+img{
+    border-radius: 8px;
+    cursor: pointer;
+}
+img:hover{
+    transform: scale(1.05);
+}
+.row1, .row2{
+    display: flex;
+    
+}
+.row1-space2{
+    margin-left: 10vw;
+}
+
+.row2-space2{
+    margin-left: 5vw; 
+}
+@media screen and (max-width: 768px) {
+    .container img {
+        height: 100px;
+        width: 70px;
+    }
+
+    .row1-space2 {
+        margin-left: 8vw; /* Adjusted margin with vw */
+    }
+
+    .row2-space2 {
+        margin-left: 3vw; /* Adjusted margin with vw */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container img {
+        height: 80px; /* Adjusted size with vw */
+        width: 60px; /* Adjusted size with vw */
+    }
+
+    .row1-space2{
+        margin-left: 4vw; /* Adjusted margin with vw */
+    }
+    .row2-space2{
+        margin-left: 2vw;
+    }
+}
+@media screen and (max-width: 400px) {
+    .container img {
+        height: 65px; /* Adjusted size with vw */
+        width: 45px; /* Adjusted size with vw */
+    }
+
+    .row1-space2{
+        margin-left: 4vw; /* Adjusted margin with vw */
+    }
+    .row2-space2{
+        margin-left: 2vw;
+    }
+}

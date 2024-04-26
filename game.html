@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+<style>
+    body{
+        background-color: #ac274f;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #ffd9da;
+
+    }
+    h1{
+        font-size: 4vw;
+        text-align: center;
+        left: 50%;
+        transform: translate(-50%);
+        position: absolute;
+        top: 2vw;
+    }
+    .container{
+        display: grid; 
+        place-items: center; 
+        height: 100vh;
+    }
+    label{
+        font-size: 1.5rem;
+        color: #ffd9da;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+    input{
+        height: 20px;
+        font-size: 2rem;
+        border: none;
+        background-color: transparent;
+        outline: none;
+        color: #fff;
+        text-align: center;
+        border-bottom: 2px solid #fff;
+    }
+    button{
+        height: 30px;
+        font-size: 1.5rem;
+        border-radius: 15px;
+        width: 150px;
+        outline: none;
+        border: 1px solid #ac274f;
+        cursor: pointer;
+      color: #ac274f;
+    }
+    .card{
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #eb638b;
+        width: 500px; 
+        height: 380px; 
+        border-radius: 10px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+    
+    #box2, #box3, #box4, #box5{
+        position: absolute;
+        display: none;
+    }
+    #box1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        position: absolute;
+    }
+    
+    #congrats{
+        display: none;
+       color: #fff;
+       font-size: 2.2rem;
+
+    }
+    img{
+        width: 150px;
+    }
+
+    .heart{
+        width: 250px;
+        
+    }
+    @media only screen and (max-width: 768px) {
+            h1 {
+                font-size: 8vw;
+                top: 7vw;
+
+            }
+            input {
+                font-size: 1.5rem;
+            }
+            button {
+                font-size: 1rem;
+            }
+        }
+</style>
+<body>
+    <h1 id="h1">Let's play a game</h1>
+    <div class="container">
+        <div class="card">
+        <div id="box1" class="box">
+            <img src="color.jpg" alt="">
+            <label for="text">My favorite color???</label>
+            <input type="text" id="color">
+            <button id="btn1" class="submitButton" type="button" onclick="answer1()">Submit</button>
+        </div>
+        <div id="box2" class="box">
+            <img src="tatay.jpg" alt="">
+            <label for="text">Name ni tatay?</label>
+            <input type="text" id="tatay">
+            <button id="btn2" class="submitButton" type="button" onclick="answer2()">Submit</button>
+        </div>
+        <div id="box3" class="box">
+            <img src="middle.jpg" alt="">
+            <label for="text">Middle name ko?????</label>
+            <input type="text" id="middle">
+            <button id="btn3" class="submitButton" type="button" onclick="answer3()">Submit</button>
+        </div>
+        <div id="box4" class="box">
+            <img src="bbtime.jpg" alt="">
+            <label for="text">Favorite natin gawin hihi</label>
+            <input type="text" id="bbtime">
+            <button id="btn4" class="submitButton" type="button" onclick="answer4()">Submit</button>
+        </div>
+        <div id="box5" class="box">
+            <img src="kdrama.jpg" alt="">
+            <label for="text">Favorite kdrama natin</label>
+            <input type="text" id="kdrama">
+            <button id="btn5" class="submitButton" type="button" onclick="answer5()">Submit</button>
+        </div>
+       
+        <div id="congrats" class="box">
+            <h2>YOU WON!!</h2>
+            <img class="heart" src="heart.jpg" alt="">
+            <h2>MY HEART</h2>
+        </div>
+
+        
+    </div>
+    </div>
+
+    <script>
+        function answer1() {
+            var color = document.getElementById("color").value.toLowerCase();
+            if (color === "green") {
+                document.getElementById("box1").style.display = "none";
+                document.getElementById("box2").style.display = "flex";
+                document.getElementById("box2").style.flexDirection = "column";
+                document.getElementById("box2").style.gap = "10px";
+                document.getElementById("box2").style.alignItems = "center";
+                document.getElementById("box2").style.justifyContent = "center";
+
+             
+            
+            } else {
+                alert("ngekk mali!!!");
+            }
+        }
+
+        function answer2() {
+            var tatay = document.getElementById("tatay").value.toLowerCase();
+            if (tatay === "jimmy") {
+                document.getElementById("box2").style.display = "none";
+                document.getElementById("box3").style.display = "flex";
+                document.getElementById("box3").style.flexDirection = "column";
+                document.getElementById("box3").style.gap = "10px"; 
+                document.getElementById("box3").style.alignItems = "center";
+                document.getElementById("box3").style.justifyContent = "center";           
+
+            } else {
+                alert("ngekk mali!!!");
+            }
+        }
+
+        function answer3() {
+            var middle = document.getElementById("middle").value.toLowerCase();
+            if (middle === "dia") {
+                document.getElementById("box3").style.display = "none";
+                document.getElementById("box4").style.display = "flex";
+                document.getElementById("box4").style.flexDirection = "column";
+                document.getElementById("box4").style.gap = "10px"; 
+                document.getElementById("box4").style.alignItems = "center";
+                document.getElementById("box4").style.justifyContent = "center";           
+
+            } else {
+                alert("ngekk mali!!!");
+            }
+        }
+
+        function answer4() {
+            var bbtime = document.getElementById("bbtime").value.toLowerCase();
+            if (bbtime === "bebe time") {
+                document.getElementById("box4").style.display = "none";
+                document.getElementById("box5").style.display = "flex";
+                document.getElementById("box5").style.flexDirection = "column";
+                document.getElementById("box5").style.gap = "10px"; 
+                document.getElementById("box5").style.alignItems = "center";
+                document.getElementById("box5").style.justifyContent = "center";           
+
+            } else {
+                alert("ngekk mali!!!");
+            }
+        }
+
+        function answer5() {
+            var kdrama = document.getElementById("kdrama").value.toLowerCase();
+            if (kdrama === "our beloved summer" || kdrama === "twinkling watermelon") {
+                document.getElementById("box5").style.display = "none";
+                document.getElementById("congrats").style.display = "block";
+                document.getElementById("h1").style.display = "none";
+
+            } else {
+                alert("ngekk mali!!!");
+            }
+        }
+    </script>
+</body>
+</html>

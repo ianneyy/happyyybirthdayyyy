@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ms Birthday Girl</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ac274f;
+
+}
+
+.slider {
+    width: 30%;
+  margin: 2% auto 0;
+  overflow: hidden;
+  position: relative;
+  color: #ffd9da;
+  border-radius: 10px;
+
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30%;
+    border-radius: 10px;
+
+}
+
+.slide {
+    width: 100%;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40%; 
+  background-color: #ffd9da;
+  border-radius: 10px;
+  
+  
+}
+
+img {
+    max-width: 100%; 
+  max-height: 100%; 
+  display: block;
+
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  z-index: 1;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slide-animation {
+  animation: slide 0.5s ease;
+}
+h1{
+    font-size: 2.5rem;
+    position: absolute;
+    top: 8%;
+    left: 18px;
+}
+h2{
+    font-size: 2.5rem;
+    text-align: center;
+    color: #ac274f;   
+}
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@media (max-width: 1075px){
+
+ h1 {
+ font-size: 1.5rem;
+ margin-left: 0;
+} 
+}
+@media (max-width: 900px) {
+
+    .slider {
+ width: 60%;
+}
+
+.slides {
+ margin-top: 20%;
+}
+
+.slide {
+ height: 30%;
+}
+h1 {
+ font-size: 2rem;
+ margin-left: 17%;
+}
+
+
+}
+@media (max-width: 768px) {
+.slider {
+ width: 90%;
+}
+
+.slides {
+ margin-top: 20%;
+}
+
+.slide {
+ height: 30%;
+}
+
+
+
+
+}
+@media (max-width: 540px) {
+
+
+h1 {
+ font-size: 1.5rem;
+ margin-left: -1px;    
+}
+
+
+}
+@media (max-width: 438px) {
+
+
+h1 {
+ font-size: 1rem;
+ 
+}
+
+
+}
+</style>
+<body>
+  <div class="slider">
+    <h1>MEET MS BIRTHDAY GIRL</h1>
+    <div class="slides">
+      <div class="slide">
+        <img src="chef.jpg" alt="Image 1">
+        <h2>ms chef</h2>
+      </div>
+      <div class="slide">
+        <img src="emo.jpg" alt="Image 2">
+        <h2>ms emo</h2>
+      </div>
+      <div class="slide">
+        <img src="forehead.jpg" alt="Image 3">
+        <h2>ms forehead</h2>
+      </div>
+      <div class="slide">
+        <img src="pastillas.jpg" alt="Image 1">
+        <h2>ms pastillas girl</h2>
+      </div>
+      <div class="slide">
+        <img src="murderous intent.jpg" alt="Image 2">
+        <h2>ms murderous intent</h2>
+      </div>
+      <div class="slide">
+        <img src="baby.jpg" alt="Image 3">
+        <h2>ms baby</h2>
+      </div>
+      <div class="slide">
+        <img src="eepy.jpg" alt="Image 1">
+        <h2>ms eepy</h2>
+      </div>
+      <div class="slide">
+        <img src="cat.jpg" alt="Image 2">
+        <h2>ms cat</h2>
+      </div>
+      <div class="slide">
+        <img src="goofy.jpg" alt="Image 3">
+        <h2>ms goofy</h2>
+      </div>
+      <div class="slide">
+        <img src="gluttonous beast.jpg" alt="Image 1">
+        <h2>ms gluttonous beast</h2>
+      </div>
+      <div class="slide">
+        <img src="frog.jpg" alt="Image 2">
+        <h2>ms frog</h2>
+      </div>
+      <div class="slide">
+        <img src="fairy.jpg" alt="Image 3">
+        <h2>ms fairy</h2>
+      </div>
+      <div class="slide">
+        <img src="cutie patootie.jpg" alt="Image 1">
+        <h2>ms cutie patootie</h2>
+      </div>
+      <div class="slide">
+        <img src="nointernet.jpg" alt="Image 2">
+        <h2>ms no internet</h2>
+      </div>
+      
+      
+    </div>
+    <button class="prev" onclick="plusSlide(-1)">&#10094;</button>
+    <button class="next" onclick="plusSlide(1)">&#10095;</button>
+  </div>
+  <script>
+    let slideIndex = 0;
+
+function showSlides() {
+  const slides = document.querySelectorAll('.slide');
+  slides.forEach(slide => slide.classList.remove('slide-animation'));
+  if (slideIndex >= slides.length) slideIndex = 0;
+  if (slideIndex < 0) slideIndex = slides.length - 1;
+  slides.forEach(slide => slide.style.display = 'none');
+  slides[slideIndex].style.display = 'block';
+  slides[slideIndex].classList.add('slide-animation');
+}
+
+function plusSlide(n) {
+  slideIndex += n;
+  showSlides();
+}
+
+showSlides();
+
+  </script>
+</body>
+</html>
